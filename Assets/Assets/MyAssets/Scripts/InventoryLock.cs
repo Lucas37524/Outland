@@ -102,11 +102,9 @@ public class ToggleCursor : MonoBehaviour
         isInventoryOpen = false;
     }
 
-    // This function opens the chest and shows the cursor (called by chest interaction)
+    // Opens chest and shows cursor
     private void OpenChest(GameObject chest)
     {
-        // Here you can add any chest opening logic (animations, UI, etc.)
-        // For now, we'll just show the cursor and unlock it
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
