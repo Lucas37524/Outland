@@ -2062,6 +2062,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95285915}
   m_CullTransparentMesh: 1
+--- !u!1 &129524788 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 711603050110373026, guid: 2b65be4054d2627458ff4b7066a1a10c, type: 3}
+  m_PrefabInstance: {fileID: 816385879}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &130899025 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1309544057231639404, guid: d723fec0a4248e6468e881e75182550f, type: 3}
@@ -2820,7 +2825,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1836351903}
+  m_Mesh: {fileID: 964936695}
 --- !u!33 &148684315
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -3826,6 +3831,18 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3702214783936963644, guid: 2b65be4054d2627458ff4b7066a1a10c, type: 3}
   m_PrefabInstance: {fileID: 816385879}
   m_PrefabAsset: {fileID: 0}
+--- !u!225 &210273882
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129524788}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &242794602
 GameObject:
   m_ObjectHideFlags: 0
@@ -11218,10 +11235,14 @@ PrefabInstance:
     - target: {fileID: -6921982256155606731, guid: 2b65be4054d2627458ff4b7066a1a10c, type: 3}
       propertyPath: canvasGroup
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 210273882}
     - target: {fileID: 711603050110373026, guid: 2b65be4054d2627458ff4b7066a1a10c, type: 3}
       propertyPath: m_Name
       value: stone_INV
+      objectReference: {fileID: 0}
+    - target: {fileID: 711603050110373026, guid: 2b65be4054d2627458ff4b7066a1a10c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3702214783936963644, guid: 2b65be4054d2627458ff4b7066a1a10c, type: 3}
       propertyPath: m_Pivot.x
@@ -11310,7 +11331,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 711603050110373026, guid: 2b65be4054d2627458ff4b7066a1a10c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 210273882}
   m_SourcePrefab: {fileID: 100100000, guid: 2b65be4054d2627458ff4b7066a1a10c, type: 3}
 --- !u!1 &816879106
 GameObject:
@@ -13471,6 +13495,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1909029067143269857, guid: ac97df8ebd27b5c4c8521cd666d69f39, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1094716514}
+    - targetCorrespondingSourceObject: {fileID: 1909029067143269857, guid: ac97df8ebd27b5c4c8521cd666d69f39, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1094716518}
     - targetCorrespondingSourceObject: {fileID: 812596126608215630, guid: ac97df8ebd27b5c4c8521cd666d69f39, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1404677293}
@@ -14833,6 +14860,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 9105005880562112155, guid: ac97df8ebd27b5c4c8521cd666d69f39, type: 3}
+--- !u!114 &1094716518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094716510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21d6d878b3136e24ca482ff5e2db9861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: Secret
 --- !u!1 &1127665385 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -235983495301861969, guid: ac97df8ebd27b5c4c8521cd666d69f39, type: 3}
@@ -23300,7 +23340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af0b6dcda7e7d284fac3c4dfa9ed8700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryScreenUI: {fileID: 621418151}
+  inventoryScreenUI: {fileID: 838572108}
   isOpen: 0
 --- !u!224 &1749976302
 RectTransform:
