@@ -7,6 +7,7 @@ TagManager:
   - Water
   - EyeLevel
   - Ground
+  - Slot
   layers:
   - Default
   - TransparentFX
