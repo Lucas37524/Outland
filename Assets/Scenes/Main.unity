@@ -848,6 +848,8 @@ MonoBehaviour:
   toolsScreenUI: {fileID: 957647141}
   playerRb: {fileID: 913674637}
   inventoryItemList: []
+  AxeReq1: {fileID: 768636144}
+  AxeReq2: {fileID: 1958172697}
   isOpen: 0
   AxeBLP: {fileID: 0}
 --- !u!1 &46803521
@@ -1793,7 +1795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &57504842
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8812,7 +8814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 231454503637470684, guid: acc6f0f046a185541a77a96084df435d, type: 3}
       propertyPath: ItemName
-      value: Stones
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 837874473758492153, guid: acc6f0f046a185541a77a96084df435d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14392,7 +14394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &957647142
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26465,7 +26467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 231454503637470684, guid: acc6f0f046a185541a77a96084df435d, type: 3}
       propertyPath: ItemName
-      value: Stones
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 837874473758492153, guid: acc6f0f046a185541a77a96084df435d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28462,7 +28464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 231454503637470684, guid: acc6f0f046a185541a77a96084df435d, type: 3}
       propertyPath: ItemName
-      value: Stones
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 837874473758492153, guid: acc6f0f046a185541a77a96084df435d, type: 3}
       propertyPath: m_LocalPosition.x

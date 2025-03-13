@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,7 +22,7 @@ public class CraftingSystem : MonoBehaviour
     Button craftAxeBTN;
 
     //Requirement Text
-    Text AxeReq1, AxeReq2;
+    public TMP_Text AxeReq1, AxeReq2;
 
     public bool isOpen;
 
@@ -52,8 +53,8 @@ public class CraftingSystem : MonoBehaviour
         toolsBTN.onClick.AddListener(delegate { OpenToolsCatergory(); });
 
         //Axe
-        AxeReq1 = toolsScreenUI.transform.Find("Axe").transform.Find("req1").GetComponent<Text>();
-        AxeReq2 = toolsScreenUI.transform.Find("Axe").transform.Find("req2").GetComponent<Text>();
+     //   AxeReq1 = toolsScreenUI.transform.Find("Axe").transform.Find("req1").GetComponent<Text>();
+     //   AxeReq2 = toolsScreenUI.transform.Find("Axe").transform.Find("req2").GetComponent<Text>();
 
         craftAxeBTN = toolsScreenUI.transform.Find("Axe").transform.Find("Button").GetComponent<Button>();
         craftAxeBTN.onClick.AddListener(delegate { CraftAnyItem(AxeBLP); });
