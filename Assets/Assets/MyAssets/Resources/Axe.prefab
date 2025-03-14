@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8027942257966635442}
   - component: {fileID: 9126480336015151564}
   - component: {fileID: 4995215351325687732}
+  - component: {fileID: 6449627196108378050}
   m_Layer: 5
   m_Name: Axe
   m_TagString: Untagged
@@ -67,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 645d1115bcc2fef4d9fb9a6bf69ee7fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d4a308d795b99ac42b6bab6e102b4cd6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -102,3 +103,21 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &6449627196108378050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6549297875391125830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe17703917b437e489ba82a8076d074a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Axe
+  Req1: Stone
+  Req2: Stick
+  Req1amount: 3
+  Req2amount: 3
+  numOfRequirements: 2

@@ -81,9 +81,17 @@ public class CraftingSystem : MonoBehaviour
         }
 
 
-        InventorySystem.Instance.ReCalculateList();
+        StartCoroutine(calculate());
 
         RefreshNeededItems();
+    }
+
+
+    public IEnumerator calculate()
+    {
+        yield return new WaitForSeconds(1f);
+
+        InventorySystem.Instance.ReCalculateList();
     }
 
     // Update is called once per frame
@@ -138,7 +146,7 @@ public class CraftingSystem : MonoBehaviour
                     break;
 
                 case "Stick":
-                    stone_count += 1;
+                    stick_count += 1;
                     break;
 
             }
