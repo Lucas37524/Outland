@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class InventorySystem : MonoBehaviour
 {
+    public GameObject ItemInfoUI;
+
     public static InventorySystem Instance { get; private set; }
 
     public GameObject inventoryScreenUI;
@@ -106,6 +108,9 @@ public class InventorySystem : MonoBehaviour
             itemToAdd.transform.SetParent(whatSlotToEquip.transform);
 
             itemList.Add(itemName);
+
+        ReCalculateList();
+        CraftingSystem.instance.RefreshNeededItems();
     }
 
     private GameObject FindNextEmptySlot()
@@ -161,6 +166,9 @@ public class InventorySystem : MonoBehaviour
                 }
             }
         }
+
+        ReCalculateList();
+        CraftingSystem.instance.RefreshNeededItems();
 
     }
 

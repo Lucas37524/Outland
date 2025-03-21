@@ -83,22 +83,20 @@ public class CraftingSystem : MonoBehaviour
 
         StartCoroutine(calculate());
 
-        RefreshNeededItems();
+        // RefreshNeededItems();
     }
 
 
     public IEnumerator calculate()
     {
-        yield return new WaitForSeconds(1f);
-
+        yield return 0; // no delay
         InventorySystem.Instance.ReCalculateList();
+        RefreshNeededItems();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        RefreshNeededItems();
 
         if (Input.GetKeyDown(KeyCode.U) && !isOpen)
         {
@@ -107,7 +105,7 @@ public class CraftingSystem : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             isOpen = true;
             FreezePlayerRotation();
-            Debug.Log(" is pressed");
+            Debug.Log("U is pressed");
 
 
 
@@ -130,7 +128,7 @@ public class CraftingSystem : MonoBehaviour
         }
     }
 
-    private void RefreshNeededItems()
+    public void RefreshNeededItems()
     {
         int stone_count = 0;
         int stick_count = 0;

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3417924714687343115}
   m_Layer: 0
   m_Name: Stick
-  m_TagString: Untagged
+  m_TagString: pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,8 +143,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.1046734, y: 0.2827156, z: 2.9793806}
-  m_Center: {x: -0.029655809, y: 0.13550101, z: 0.034643475}
+  m_Size: {x: 6.245364, y: 0.6553858, z: 6.31246}
+  m_Center: {x: -0.010948373, y: 0.20175831, z: 0.10952014}
 --- !u!54 &3417924714687343115
 Rigidbody:
   m_ObjectHideFlags: 0
