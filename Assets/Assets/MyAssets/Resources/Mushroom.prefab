@@ -115,11 +115,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e00fa5becc06644697f88bdf840dc18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTrashable: 0
+  isTrashable: 1
   thisName: Mushroom
   thisDescription: A tasty mushroom     (2HP   50 Calories)
   thisFunctionality: Used as food
   isConsumable: 1
-  healthEffect: 2
-  caloriesEffect: 50
-  hydrationEffect: 0
+  healthEffect: 1
+  caloriesEffect: 25
+  hydrationEffect: -1

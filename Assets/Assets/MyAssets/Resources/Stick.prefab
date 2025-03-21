@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e00fa5becc06644697f88bdf840dc18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTrashable: 0
+  isTrashable: 1
   thisName: Stick
   thisDescription: A dry stick
   thisFunctionality: Used in crafting
