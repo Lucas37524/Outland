@@ -53,8 +53,8 @@ public class CraftingSystem : MonoBehaviour
         toolsBTN.onClick.AddListener(delegate { OpenToolsCatergory(); });
 
         //Axe
-     //   AxeReq1 = toolsScreenUI.transform.Find("Axe").transform.Find("req1").GetComponent<Text>();
-     //   AxeReq2 = toolsScreenUI.transform.Find("Axe").transform.Find("req2").GetComponent<Text>();
+           AxeReq1 = toolsScreenUI.transform.Find("Axe").transform.Find("req1").GetComponent<TMP_Text>();
+           AxeReq2 = toolsScreenUI.transform.Find("Axe").transform.Find("req2").GetComponent<TMP_Text>();
 
         craftAxeBTN = toolsScreenUI.transform.Find("Axe").transform.Find("Button").GetComponent<Button>();
         craftAxeBTN.onClick.AddListener(delegate { CraftAnyItem(AxeBLP); });
@@ -70,11 +70,11 @@ public class CraftingSystem : MonoBehaviour
     {
         InventorySystem.Instance.AddToInventory(blueprintToCraft.itemName);
 
-        if(blueprintToCraft.numOfRequirements == 1)
+        if (blueprintToCraft.numOfRequirements == 1)
         {
             InventorySystem.Instance.RemoveItem(blueprintToCraft.Req1, blueprintToCraft.Req1amount);
         }
-        else if(blueprintToCraft.numOfRequirements == 2)
+        else if (blueprintToCraft.numOfRequirements == 2)
         {
             InventorySystem.Instance.RemoveItem(blueprintToCraft.Req1, blueprintToCraft.Req1amount);
             InventorySystem.Instance.RemoveItem(blueprintToCraft.Req2, blueprintToCraft.Req2amount);

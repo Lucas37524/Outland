@@ -63,7 +63,7 @@ public class InventorySystem : MonoBehaviour
     void Update()
     {
 
-        if(Input.GetKeyDown(KeyCode.I) && !isOpen)
+        if (Input.GetKeyDown(KeyCode.I) && !isOpen)
         {
             Debug.Log("i is pressed");
             inventoryScreenUI.SetActive(true);
@@ -76,7 +76,7 @@ public class InventorySystem : MonoBehaviour
             inventoryScreenUI.SetActive(false);
             UnfreezePlayerRotation();
 
-            if(!CraftingSystem.instance.isOpen)
+            if (!CraftingSystem.instance.isOpen)
             {
                 Cursor.lockState = CursorLockMode.Locked;
             }
@@ -104,12 +104,12 @@ public class InventorySystem : MonoBehaviour
 
     public void AddToInventory(string itemName)
     {
-            whatSlotToEquip = FindNextEmptySlot();
+        whatSlotToEquip = FindNextEmptySlot();
 
-            itemToAdd = Instantiate(Resources.Load<GameObject>(itemName), whatSlotToEquip.transform.position, whatSlotToEquip.transform.rotation);
-            itemToAdd.transform.SetParent(whatSlotToEquip.transform);
+        itemToAdd = Instantiate(Resources.Load<GameObject>(itemName), whatSlotToEquip.transform.position, whatSlotToEquip.transform.rotation);
+        itemToAdd.transform.SetParent(whatSlotToEquip.transform);
 
-            itemList.Add(itemName);
+        itemList.Add(itemName);
 
         ReCalculateList();
         CraftingSystem.instance.RefreshNeededItems();
@@ -117,13 +117,13 @@ public class InventorySystem : MonoBehaviour
 
     private GameObject FindNextEmptySlot()
     {
-        foreach(GameObject slot in slotList)
+        foreach (GameObject slot in slotList)
         {
 
-            if(slot.transform.childCount == 0)
+            if (slot.transform.childCount == 0)
             {
                 return slot;
-            }     
+            }
         }
         return new GameObject();
     }
@@ -135,13 +135,13 @@ public class InventorySystem : MonoBehaviour
 
         foreach (GameObject slot in slotList)
         {
-            if(slot.transform.childCount > 0)
+            if (slot.transform.childCount > 0)
             {
                 counter += 1;
             }
         }
 
-        if(counter == 21)
+        if (counter == 21)
         {
             return true;
         }
@@ -156,7 +156,7 @@ public class InventorySystem : MonoBehaviour
     {
         int counter = amountToRemove;
 
-        for(var i = slotList.Count -1; i >= 0; i--)
+        for (var i = slotList.Count - 1; i >= 0; i--)
         {
             if (slotList[i].transform.childCount > 0)
             {
@@ -185,7 +185,7 @@ public class InventorySystem : MonoBehaviour
                 string name = slot.transform.GetChild(0).name;  //Stone (Clone)  
                 string str2 = "(Clone)";
                 string result = name.Replace(str2, "");
-              
+
                 itemList.Add(result);
             }
         }
