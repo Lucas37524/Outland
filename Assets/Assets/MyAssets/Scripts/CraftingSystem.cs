@@ -9,7 +9,7 @@ public class CraftingSystem : MonoBehaviour
 {
 
     public GameObject craftingScreenUI;
-    public GameObject toolsScreenUI;
+    public GameObject toolsScreenUI, survivalScreenUI, refineScreenUI;
 
     public Rigidbody playerRb; // Reference to player's Rigidbody
 

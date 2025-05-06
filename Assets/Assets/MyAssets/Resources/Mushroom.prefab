@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f11615cc7423c6f41b6cf63b362ca660, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 018eb95f8dbddc24c83bb19348b09132, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -123,3 +123,6 @@ MonoBehaviour:
   healthEffect: 1
   caloriesEffect: 25
   hydrationEffect: -1
+  isEquippable: 0
+  isInsideQuickSlot: 0
+  isSelected: 0

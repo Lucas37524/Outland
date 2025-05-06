@@ -56,6 +56,8 @@ public class EquipableItem : MonoBehaviour
 
             animator.SetTrigger("hit");
 
+          
+
 
 
         }
@@ -79,6 +81,7 @@ public class EquipableItem : MonoBehaviour
         {
 
             selectedTree.GetComponent<ChoppableTree>().GetHit();
+            SoundManager.Instance.PlaySound(SoundManager.Instance.treeHitSound);
 
         }
 

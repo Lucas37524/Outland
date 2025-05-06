@@ -9,6 +9,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource dropItemSound;
     public AudioSource axeSwingSound;
     public AudioSource treeHitSound;
+    public AudioSource craftItemSound;
 
 
 

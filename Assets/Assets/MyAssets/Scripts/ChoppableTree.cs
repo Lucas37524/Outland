@@ -55,7 +55,6 @@ public class ChoppableTree : MonoBehaviour
         {
             TreeIsDead();
         }
-
     }
 
 
