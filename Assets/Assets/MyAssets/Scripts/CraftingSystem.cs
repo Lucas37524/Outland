@@ -21,9 +21,11 @@ public class CraftingSystem : MonoBehaviour
     Button craftPlankBTN;
     Button craftfireStarterBTN;
     Button craftcookedFishBTN;
+    Button craftPieceBTN;
+    Button craftBonfireBTN;
 
     //Requirement Text
-    public TMP_Text AxeReq1, AxeReq2, PlankReq1, FishReq1, FishReq2, StarterReq1, StarterReq2;
+    public TMP_Text AxeReq1, AxeReq2, PlankReq1, FishReq1, FishReq2, StarterReq1, StarterReq2, PieceReq1, BonfireReq1, BonfireReq2;
 
     public bool isOpen;
 
@@ -32,6 +34,8 @@ public class CraftingSystem : MonoBehaviour
     public Blueprint PlankBLP = new Blueprint("Plank", 1, "Log", 1, "", 0);
     public Blueprint fireStarterBLP = new Blueprint("Fire Starter", 1, "Sticks", 3, "Stone", 1);
     public Blueprint cookedFishBLP = new Blueprint("Cooked Fish", 1, "Fish", 1, "Fire Starter", 1);
+    public Blueprint PieceBLP = new Blueprint("Piece", 1, "Plank", 5, "", 0);
+    public Blueprint BonfireBLP = new Blueprint("Bonfire", 2, "Piece", 5, "Starter", 3);
 
     public static CraftingSystem instance { get; set; }
 
@@ -80,15 +84,22 @@ public class CraftingSystem : MonoBehaviour
         AxeReq1 = toolsScreenUI.transform.Find("Axe").transform.Find("req1").GetComponent<TMP_Text>();
         AxeReq2 = toolsScreenUI.transform.Find("Axe").transform.Find("req2").GetComponent<TMP_Text>();
 
-
         // Fish Requirements
         FishReq1 = foodScreenUI.transform.Find("Fish").transform.Find("req1").GetComponent<TMP_Text>();
         FishReq2 = foodScreenUI.transform.Find("Fish").transform.Find("req2").GetComponent<TMP_Text>();
 
+        // Piece Requirements
+        PieceReq1 = refineScreenUI.transform.Find("Piece").transform.Find("req1").GetComponent<TMP_Text>();
 
         // Starter Requirements
         StarterReq1 = survivalScreenUI.transform.Find("Starter").transform.Find("req1").GetComponent<TMP_Text>();
         StarterReq2 = survivalScreenUI.transform.Find("Starter").transform.Find("req2").GetComponent<TMP_Text>();
+
+        // Bonfire Requirements
+        BonfireReq1 = survivalScreenUI.transform.Find("Bonfire").transform.Find("req1").GetComponent<TMP_Text>();
+        BonfireReq2 = survivalScreenUI.transform.Find("Bonfire").transform.Find("req2").GetComponent<TMP_Text>();
+
+
 
         // Craft Button
         craftAxeBTN = toolsScreenUI.transform.Find("Axe").transform.Find("Button").GetComponent<Button>();
@@ -102,6 +113,12 @@ public class CraftingSystem : MonoBehaviour
 
         craftcookedFishBTN = foodScreenUI.transform.Find("Fish").transform.Find("Button").GetComponent<Button>();
         craftcookedFishBTN.onClick.AddListener(delegate { CraftAnyItem(cookedFishBLP); });
+
+        craftPieceBTN = refineScreenUI.transform.Find("Piece").transform.Find("Button").GetComponent<Button>();
+        craftPieceBTN.onClick.AddListener(delegate { CraftAnyItem(PieceBLP); });
+
+        craftBonfireBTN = survivalScreenUI.transform.Find("Bonfire").transform.Find("Button").GetComponent<Button>();
+        craftBonfireBTN.onClick.AddListener(delegate { CraftAnyItem(BonfireBLP); });
     }
 
     void OpenCraftingCategory()
@@ -206,6 +223,8 @@ public class CraftingSystem : MonoBehaviour
         int log_count = 0;
         int fish_count = 0;
         int starter_count = 0;
+        int plank_count = 0;
+        int piece_count = 0;
 
 
         inventoryItemList = InventorySystem.Instance.itemList;
@@ -232,6 +251,14 @@ public class CraftingSystem : MonoBehaviour
 
                 case "Fish":
                     fish_count += 1;
+                    break;
+
+                case "Plank":
+                    plank_count += 1;
+                    break;
+
+                case "Piece":
+                    piece_count += 1;
                     break;
             }
         }
@@ -267,6 +294,22 @@ public class CraftingSystem : MonoBehaviour
             Debug.Log("Plank button hidden. Requirements not met.");
         }
 
+
+        // ---- PIECE ---- //
+        PieceReq1.text = "5 planks [" + plank_count + "]";
+
+        // Check if requirements are met
+        if (plank_count >= 5)
+        {
+            craftPieceBTN.gameObject.SetActive(true);
+            Debug.Log("Piece button visible! Requirements met.");
+        }
+        else
+        {
+            craftPieceBTN.gameObject.SetActive(false);
+            Debug.Log("Piece button hidden. Requirements not met.");
+        }
+
         // ---- COOKED FISH ---- //
         FishReq1.text = "1 fish [" + fish_count + "]";
         FishReq2.text = "1 starter [" + starter_count + "]";
@@ -297,6 +340,22 @@ public class CraftingSystem : MonoBehaviour
         {
             craftfireStarterBTN.gameObject.SetActive(false);
             Debug.Log("Starter button hidden. Requirements not met.");
+        }
+
+        // ---- BONFIRE ---- //
+        BonfireReq1.text = "5 pieces [" + piece_count + "]";
+        BonfireReq2.text = "3 starters [" + starter_count + "]";
+
+        // Check if requirements are met
+        if (piece_count >= 5 && starter_count >= 3)
+        {
+            craftBonfireBTN.gameObject.SetActive(true);
+            Debug.Log("Bonfire button visible! Requirements met.");
+        }
+        else
+        {
+            craftBonfireBTN.gameObject.SetActive(false);
+            Debug.Log("Bonfire button hidden. Requirements not met.");
         }
     }
 

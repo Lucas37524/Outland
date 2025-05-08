@@ -10,6 +10,7 @@ TagManager:
   - Slot
   - pickable
   - QuickSlot
+  - gamewon
   layers:
   - Default
   - TransparentFX
