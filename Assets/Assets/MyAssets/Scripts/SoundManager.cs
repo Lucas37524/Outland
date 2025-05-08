@@ -10,6 +10,9 @@ public class SoundManager : MonoBehaviour
     public AudioSource axeSwingSound;
     public AudioSource treeHitSound;
     public AudioSource craftItemSound;
+    public AudioSource collectItemSound;
+    public AudioSource eatFoodSound;
+    public AudioSource drinkSound;
 
 
 

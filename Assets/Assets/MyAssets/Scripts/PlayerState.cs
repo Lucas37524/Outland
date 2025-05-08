@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerState : MonoBehaviour
 {
     public static PlayerState Instance { get; set; }
+
+
+    // ---- Player Death ---- //
+    public Rigidbody rb;
+    public bool isDead = false;
+    public GameObject deathUI;
 
     // ---- Player Health ---- //
     public float currentHealth;
@@ -66,6 +73,11 @@ public class PlayerState : MonoBehaviour
             {
                 currentHealth -= 2;
                 currentHealth = Mathf.Max(currentHealth, 0); // Ensure health doesn't go below 0
+
+                if (currentHealth <= 0)
+                {
+                    Die();
+                }
             }
 
             yield return new WaitForSeconds(2); // Health decreases every 5 seconds if conditions are met
@@ -77,7 +89,7 @@ public class PlayerState : MonoBehaviour
         distanceTravelled += Vector3.Distance(playerBody.transform.position, lastPosition);
         lastPosition = playerBody.transform.position;
 
-        if (distanceTravelled >= 4)
+        if (distanceTravelled >= 3)
         {
             distanceTravelled = 0;
             if (currentCalories > 0)
@@ -90,6 +102,11 @@ public class PlayerState : MonoBehaviour
     public void setHealth(float newHealth)
     {
         currentHealth = Mathf.Clamp(newHealth, 0, maxHealth);
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
     }
 
     public void setCalories(float newCalories)
@@ -100,5 +117,41 @@ public class PlayerState : MonoBehaviour
     public void setHydration(float newHydration)
     {
         currentHydrationPercent = Mathf.Clamp(newHydration, 0, maxHydrationPercent);
+    }
+
+    void Die()
+    {
+        if (isDead) return;
+
+        isDead = true;
+
+        
+
+        Debug.Log("Player is dead");
+
+        // Lock movement
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        rb.constraints = RigidbodyConstraints.FreezeAll;
+
+        // Show death UI
+        if (deathUI != null)
+        {
+            deathUI.SetActive(true);
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void ExitGame()
+    {
+        Debug.Log("Exiting game...");
+        Application.Quit();
     }
 }

@@ -81,6 +81,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
                 itemPendingConsumption = gameObject;
                 consumingFunction(healthEffect, caloriesEffect, hydrationEffect);
                 EquipSystem.Instance.DestroySelectedItemModel();
+                SoundManager.Instance.PlaySound(SoundManager.Instance.eatFoodSound);
             }
         }
     }

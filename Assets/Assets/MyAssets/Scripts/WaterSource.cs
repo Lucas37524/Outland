@@ -9,6 +9,7 @@ public class WaterSource : MonoBehaviour
         if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
             PlayerState.Instance.setHydration(PlayerState.Instance.currentHydrationPercent + hydrationAmount);
+            SoundManager.Instance.PlaySound(SoundManager.Instance.drinkSound);
         }
     }
 }

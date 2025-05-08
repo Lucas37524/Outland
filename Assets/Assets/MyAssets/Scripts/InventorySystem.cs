@@ -129,7 +129,7 @@ public class InventorySystem : MonoBehaviour
     }
 
 
-    public bool CheckIfFull()
+    public bool CheckSlotsAvailable(int emptyNeeded)
     {
         int counter = 0;
 
@@ -141,7 +141,7 @@ public class InventorySystem : MonoBehaviour
             }
         }
 
-        if (counter == 21)
+        if (counter == 21 - emptyNeeded)
         {
             return true;
         }
