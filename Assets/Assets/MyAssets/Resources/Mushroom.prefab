@@ -120,9 +120,10 @@ MonoBehaviour:
   thisDescription: A tasty mushroom     (2HP   50 Calories)
   thisFunctionality: Used as food
   isConsumable: 1
+  isBonfire: 0
   healthEffect: 1
   caloriesEffect: 25
-  hydrationEffect: -1
+  hydrationEffect: 1
   isEquippable: 0
   isInsideQuickSlot: 0
   isSelected: 0

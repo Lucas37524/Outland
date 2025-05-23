@@ -7,6 +7,7 @@ public class PlayerState : MonoBehaviour
 {
     public static PlayerState Instance { get; set; }
 
+    public GameObject winScreen;
 
     // ---- Player Death ---- //
     public Rigidbody rb;
@@ -143,6 +144,32 @@ public class PlayerState : MonoBehaviour
             Cursor.visible = true;
         }
     }
+
+    public void gameWon()
+    {
+        if (isDead) return;
+
+        isDead = true;
+
+
+
+        Debug.Log("Player has won");
+
+        // Lock movement
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        rb.constraints = RigidbodyConstraints.FreezeAll;
+
+        // Show death UI
+        if (winScreen != null)
+        {
+            winScreen.SetActive(true);
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
+
 
     public void RestartGame()
     {

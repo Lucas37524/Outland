@@ -201,6 +201,7 @@ public class CraftingSystem : MonoBehaviour
         {
             craftingScreenUI.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             isOpen = true;
             FreezePlayerRotation();
             Debug.Log("U is pressed - Opening Crafting UI");
@@ -210,6 +211,7 @@ public class CraftingSystem : MonoBehaviour
             craftingScreenUI.SetActive(false);
             toolsScreenUI.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             isOpen = false;
             UnfreezePlayerRotation();
             Debug.Log("U is pressed - Closing Crafting UI");

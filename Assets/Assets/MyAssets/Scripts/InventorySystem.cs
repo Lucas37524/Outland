@@ -68,6 +68,7 @@ public class InventorySystem : MonoBehaviour
             Debug.Log("i is pressed");
             inventoryScreenUI.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             isOpen = true;
             FreezePlayerRotation();
         }
@@ -79,6 +80,7 @@ public class InventorySystem : MonoBehaviour
             if (!CraftingSystem.instance.isOpen)
             {
                 Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
             }
 
             isOpen = false;

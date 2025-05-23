@@ -139,6 +139,7 @@ MonoBehaviour:
   thisDescription: A bonfire used for signaling
   thisFunctionality: Used for signaling
   isConsumable: 0
+  isBonfire: 1
   healthEffect: 0
   caloriesEffect: 0
   hydrationEffect: 0

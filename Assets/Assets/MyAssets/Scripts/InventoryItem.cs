@@ -21,6 +21,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     // --- Consumption --- //
     private GameObject itemPendingConsumption;
     public bool isConsumable;
+    public bool isBonfire;
 
     public float healthEffect;
     public float caloriesEffect;
@@ -82,6 +83,15 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
                 consumingFunction(healthEffect, caloriesEffect, hydrationEffect);
                 EquipSystem.Instance.DestroySelectedItemModel();
                 SoundManager.Instance.PlaySound(SoundManager.Instance.eatFoodSound);
+            }
+
+            if (isBonfire)
+            {
+                // Setting this specific gameobject to be the item we want to destroy later
+                itemPendingConsumption = gameObject;
+                Debug.Log("Game is Won");
+                PlayerState.Instance.gameWon();
+                EquipSystem.Instance.DestroySelectedItemModel();
             }
         }
     }
